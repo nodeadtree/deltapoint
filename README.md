@@ -1,5 +1,5 @@
-#deltapoint.py
-###This was made at the request of Sam Sehayek of the SFSU math department
+# deltapoint.py
+### This was made at the request of Sam Sehayek of the SFSU math department
 
 Requires numpy
 
