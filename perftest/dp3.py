@@ -1,7 +1,8 @@
 #!/bin/python
 import itertools as it
-import numpy as np
 import argparse as ap
+import time as t
+from multiprocessing import Pool
 
 #Argument parsing
 b = ap.ArgumentParser()
@@ -13,7 +14,15 @@ b = b.parse_args()
 N = b.N
 n = b.n
 
-a = [i+1 for i in range(N)]
+
+#Given sequence of numbers
+#split sequence into single elements 
+#reassemble in pairs x,y such that x<=y ---> x[-1]<=y[0],
+#return this list of pairs
+N=[i+1 for i in range(N)]
+
+
+delta_3 = t.time()
 def check_increasing(seq, n=1):
     if seq[0] < n:
         return False
@@ -25,12 +34,19 @@ def check_increasing(seq, n=1):
             return check_increasing(seq[1:],n)
 
 output = list()
-for i in it.combinations_with_replacement(a,n):
+for i in it.combinations_with_replacement(N,n):
     if check_increasing(i):
         output.append(i)
+
+delta_3 = t.time() - delta_3
+
+print("Combinations + filter time : " + str(delta_3))
+print("Combinations + filter results : " + str(len(output)))
+'''
 output = [str(k) for k in it.product(output, output)]
 print(len(output))
 
 print("Length of output is : " + str(len(output)))
 with open(b.f+".txt",'w') as f:
-f.write("\n".join([i for i in output]))
+    f.write("\n".join([i for i in output]))
+'''
