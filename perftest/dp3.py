@@ -2,7 +2,6 @@
 import itertools as it
 import argparse as ap
 import time as t
-from multiprocessing import Pool
 
 #Argument parsing
 b = ap.ArgumentParser()
