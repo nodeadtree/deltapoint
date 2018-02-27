@@ -53,11 +53,9 @@ delta_2 = t.time()-delta_2
 print("Multiprocessing time : " + str(delta_2))
 print("Multiprocessing results : " + str(len(a)))
 
-'''
-output = [str(k) for k in it.product(output, output)]
+output = [str(k) for k in it.product(a, a)]
 print(len(output))
 
 print("Length of output is : " + str(len(output)))
 with open(b.f+".txt",'w') as f:
     f.write("\n".join([i for i in output]))
-'''

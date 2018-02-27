@@ -41,11 +41,10 @@ delta_3 = t.time() - delta_3
 
 print("Combinations + filter time : " + str(delta_3))
 print("Combinations + filter results : " + str(len(output)))
-'''
+
 output = [str(k) for k in it.product(output, output)]
 print(len(output))
 
 print("Length of output is : " + str(len(output)))
 with open(b.f+".txt",'w') as f:
     f.write("\n".join([i for i in output]))
-'''

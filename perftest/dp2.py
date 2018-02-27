@@ -39,11 +39,10 @@ delta_1 = t.time()-delta_1
  
 print("Recursive algorithm time : " + str(delta_1))
 print("Recursive algorithm results : " + str(len(a)))
-'''
-output = [str(k) for k in it.product(output, output)]
+
+output = [str(k) for k in it.product(a,a)]
 print(len(output))
 
 print("Length of output is : " + str(len(output)))
 with open(b.f+".txt",'w') as f:
     f.write("\n".join([i for i in output]))
-'''
